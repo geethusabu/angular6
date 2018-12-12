@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form ng-app="myApp" ng-controller="myCtrl"  name="myForm" novalidate>
+        <div ng-init="names=['abc','cde','fgh']">
+            <ul>
+                <li ng-repeat="x in names">
+                    {{x}}
+                </li>
+            </ul>
+            <label>Username</label>
+            <input type="text" name="fdfsdfdsf" ng-model="person.userName" required>
+            <span style="color:red" ng-show="myForm.userName.$dirty && myForm.userName.$invalid">
+                <span ng-show="myForm.userName.$error.required">Username needed
+                </span>
+            </span>
+            <br>
+            <label>Password</label>
+            <input type="password" name="fdsfsdfdsfsdf" ng-model="person.password" required>
+            <span style="color: red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                <span ng-show="myForm.password.$error.required">
+                    Password needed
+                </span>
+            </span>
+            {{person.userName+person.password}}
+            <input type="submit" name="login" value="Login" ng-click=LoginBtn()>
+        </div>
+        <script src="./app.js"></script>
+    </form>
+</body>
+
+</html>
